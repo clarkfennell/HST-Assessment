@@ -6,12 +6,25 @@ body {
     }
 }
 
+blockquote {
+    margin: 0;
+}
+
 h1, 
 q {
     font: {
         family: $font-header;
-        size: 2rem;
+        size: 1.5rem;
         weight: 400;
+    }
+    margin: {
+        top: 0;
+        bottom: 0;
+    }
+    @media (min-width: $sm) {
+        font: {
+            size: 2rem;
+        }
     }
 }
 
@@ -33,7 +46,35 @@ a {
 a {
     color: $white;
     display: block;
-    margin: 1rem auto;
+    margin: 0;
+    padding: 1rem 0;
+    transition: color ease-in-out .4s;
+    &:hover {
+        color: $pink;
+        &:after {
+            filter: invert(90%) sepia(10%) saturate(367%) hue-rotate(281deg) brightness(89%) contrast(100%);
+        }
+    }
+    &:after {
+        content: '';
+        background: {
+            image: url('../images/bi-arrow-right-circle-fill.svg');
+            size: 1rem 1rem;
+            repeat: no-repeat;
+        }
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin: 0 .5rem;
+        vertical-align: middle;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(145deg) brightness(104%) contrast(104%);
+        transition: filter ease-in-out .4s;
+    }
+}
+
+cite {
+    display: block;
+    padding: 1rem 0 0;
 }
 
 .container {
@@ -42,7 +83,7 @@ a {
         direction: column;
         wrap: nowrap;
     }
-    align-items: center;
+    align-items: stretch;
     @media (min-width: $md) {
         flex: {
             direction: row;
@@ -51,22 +92,33 @@ a {
 }
 
 .col {
-    display: block;
-    flex: 1 1 100%;
-    @media (min-width: $md) {
-        flex: 1 1 50%;
+    display: flex;
+    flex: {
+        direction: column;
     }
-    .row {
-        height: 50vh;
-        min: {
+    width: 100%;
+    @media (min-width: $md) {
+        width: 50%;
+    }
+    &-single {
+        .row {
             height: 100%;
         }
+    }
+    .row {
         padding: 3rem;
         &-blue {
             background: {
                 color: $blue;
             }
             color: $white;
+            display: flex;
+            flex: {
+                direction: column;
+                wrap: nowrap;
+            }
+            justify-content: center;
+            text-align: left;
         }
         &-pink {
             background: {
@@ -85,7 +137,8 @@ a {
                     wrap: nowrap;
                 }
                 justify-content: center;
-                align-items: center;
+                align-items: stretch;
+                align-content: stretch;
                 @media (min-width: $sm) {
                     flex: {
                         direction: row;
@@ -93,20 +146,25 @@ a {
                     }
                 }
                 &-image {
-                    flex: 1 1 100%;
-                    padding: 1rem;
-                    height: auto;
+                    flex: 0 1 100%;
                     width: 100%;
-                    max: {
-                        height: 15rem;
-                        width: 15rem
-                    }
-                    @media (min-width: $md) {
-                        flex: 1 1 50%;
-                        width: 50%;
+                    height: auto;
+                    object-fit: contain;
+                    padding: 2rem 0;
+                    max-height: 20rem;
+                    @media (min-width: $sm) {
+                        flex: 0 1 calc(50% - 2rem);
+                        width: calc(50% - 2rem);
+                        height: auto;
+                        padding: 1rem;
+                        max-height: 5rem;
                     }
                 }
             }
         }
     }
+}
+
+.reviews {
+    max-width: 20rem;
 }
