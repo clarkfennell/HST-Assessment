@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
-    "axios": "^0.26.1"
+    "axios": "^0.26.1",
+    "bootstrap": "^4.6.0",
+    "react-bootstrap": "^2.3.0"
   }
 }
