@@ -10,6 +10,103 @@ h1,
 q {
     font: {
         family: $font-header;
-        size: 3rem;
+        size: 2rem;
+        weight: 400;
+    }
+}
+
+p,
+cite,
+a {
+    font: {
+        family: $font-body;
+    }
+}
+
+p,
+a {
+    font: {
+        size: 1rem;
+    }
+}
+
+a {
+    color: $white;
+    display: block;
+    margin: 1rem auto;
+}
+
+.container {
+    display: flex;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+    align-items: center;
+    @media (min-width: $md) {
+        flex: {
+            direction: row;
+        }
+    }
+}
+
+.col {
+    display: block;
+    flex: 1 1 100%;
+    @media (min-width: $md) {
+        flex: 1 1 50%;
+    }
+    .row {
+        height: 50vh;
+        min: {
+            height: 100%;
+        }
+        padding: 3rem;
+        &-blue {
+            background: {
+                color: $blue;
+            }
+            color: $white;
+        }
+        &-pink {
+            background: {
+                color: $pink;
+            }
+            color: $blue;
+        }
+        &-white {
+            background: {
+                color: $white;
+            }
+            .grid {
+                display: flex;
+                flex: {
+                    direction: column;
+                    wrap: nowrap;
+                }
+                justify-content: center;
+                align-items: center;
+                @media (min-width: $sm) {
+                    flex: {
+                        direction: row;
+                        wrap: wrap;
+                    }
+                }
+                &-image {
+                    flex: 1 1 100%;
+                    padding: 1rem;
+                    height: auto;
+                    width: 100%;
+                    max: {
+                        height: 15rem;
+                        width: 15rem
+                    }
+                    @media (min-width: $md) {
+                        flex: 1 1 50%;
+                        width: 50%;
+                    }
+                }
+            }
+        }
     }
 }
