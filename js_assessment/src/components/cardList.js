@@ -4,7 +4,8 @@ import BasketPopup from './basketPopup'
 
 class CardList extends Component {
   state = {
-    courses: []
+    courses: [],
+    crossSellsData: []
   }
 
   componentDidMount() {
@@ -20,9 +21,8 @@ class CardList extends Component {
   crossSellPopup = (e) => {
     e.preventDefault();
     let buttonId = e.currentTarget.id - 1;
-    let crossSellData = this.state.courses[buttonId].CrossSells;
-
-    return crossSellData
+    const crossSellsData = this.state.courses[buttonId].CrossSells;
+    return this.setState({ crossSellsData })
   }
 
   render() {
@@ -53,7 +53,8 @@ class CardList extends Component {
                 }
             </div>
             <BasketPopup
-                crossSellsData={this.crossSellData}
+                courses={this.courses}
+                crossSellsData={this.crossSellsData}
             />
         </>
     )
