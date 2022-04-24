@@ -18,23 +18,25 @@ class CardList extends Component {
 
   render() {
     return (
-        <div className="col mt-4">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
             {
             this.state.courses
                 .map(course =>
-                    <div className="card h-100" key={course.Id} id={course.Id} data-product-id={course.Id}>
-                        <img src={course.ThumbnailUrl} className="card-img-top" alt="" />
-                        <div className="card-body">
-                            <h5 className="card-title">{course.Title}</h5>
-                            <p className="card-text">{course.Description}</p>
-                        </div>
-                        <div className="card-body js_card-links">
-                            <div className="form-group">
-                                <label for="purchase-02">Items to purchase</label>
-                                <input className="js_item_count form-control" id="purchase-02" type="number" value="1" min="1" max="100" />
+                    <div className="col m-4">
+                        <div className="card" key={course.Id} id={course.Id} data-product-id={course.Id}>
+                            <img src={course.ThumbnailUrl} className="card-img-top" alt="" />
+                            <div className="card-body">
+                                <h5 className="card-title">{course.Title}</h5>
+                                <p className="card-text">{course.Description}</p>
                             </div>
-                            <button className="btn btn-primary btn-block" type="button">Add to Basket</button>
-                            <a href={course.InfoURL} className="btn btn-secondary btn-block">More Info</a>
+                            <div className="card-body js_card-links">
+                                <div className="form-group">
+                                    <label>Items to purchase</label>
+                                    <input className="js_item_count form-control" type="number" min="1" max="100" />
+                                </div>
+                                <button className="btn btn-primary btn-block" type="button">Add to Basket</button>
+                                <a href={course.InfoURL} className="btn btn-secondary btn-block">More Info</a>
+                            </div>
                         </div>
                     </div>
                 )

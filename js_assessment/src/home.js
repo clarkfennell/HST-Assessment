@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import CardList from './components/cardList'
+import Container from 'react-bootstrap/Container';
 
 class Home extends Component {
     render() {
         return(
-            <div className="container">
-			    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                    <CardList />
-                </div>
-            </div>
+            <Container>
+                <CardList />
+            </Container>
         )
     }
 }
