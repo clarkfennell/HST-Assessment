@@ -22,8 +22,8 @@ class CardList extends Component {
             {
             this.state.courses
                 .map(course =>
-                    <div className="col m-4">
-                        <div className="card" key={course.Id} id={course.Id} data-product-id={course.Id}>
+                    <div className="col m-4" key={course.Id}>
+                        <div className="card" id={course.Id} data-product-id={course.Id}>
                             <img src={course.ThumbnailUrl} className="card-img-top" alt="" />
                             <div className="card-body">
                                 <h5 className="card-title">{course.Title}</h5>
