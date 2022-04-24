@@ -1,0 +1,17 @@
+//Variables SCSS
+
+//Colors
+$blue: #20293E;
+$pink: #E3CAD8;
+$white: #F7F6F2;
+$black: #000;
+
+//Viewports
+$sm: 600px;
+$md: 768px;
+$lr: 1024px;
+
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Cambo&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+$font-header: 'Cambo', serif;
+$font-body: 'Space Grotesk', sans-serif;
